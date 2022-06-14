@@ -10,13 +10,13 @@ let windDeg = document.querySelector('.wind-deg')
 let humidity = document.querySelector('.humidity')
 let title = document.querySelector('title')
 let colorPicker = document.querySelector('.color-picker')
-colorPicker.value = "#141414"
+
 
 fetchWeatherApi()
 
-setInterval(() => {
-    fetchWeatherApi()
-}, 60000)
+// setInterval(() => {
+//     fetchWeatherApi()
+// }, 60000)
 
 function fetchWeatherApi() {
 
@@ -42,21 +42,34 @@ function fetchWeatherApi() {
         })
 
 }
+ 
 
+colorPicker.addEventListener('input', getSelectedColor)
 
+if (localStorage.getItem("backgroundColor") != null) {
+    let selectedColor = localStorage.getItem("backgroundColor")
+    colorPicker.value = selectedColor
+    changeColor(selectedColor)
+} else {
+    colorPicker.value = "#141414"
+}
 
-colorPicker.addEventListener('input', changeColor)
-
-function changeColor(e) {
+function getSelectedColor(e) {
     let selectedColor = e.currentTarget.value
+    localStorage.setItem("backgroundColor", selectedColor);
+    changeColor(selectedColor)
+
+}
+
+
+function changeColor(selectedColor) {
     container.style.backgroundColor = selectedColor
 
-    if(tinycolor(selectedColor).isDark()){
+    if (tinycolor(selectedColor).isDark()) {
         container.style.color = "#ffffff"
-        container.style["text-shadow"] =  "-2px 5px 7px black"
-    }
-    else{
-        container.style.color = "#000000"   
-        container.style["text-shadow"] =  "-2px 5px 7px #c3c3c3"
+        container.style["text-shadow"] = "-2px 5px 7px black"
+    } else {
+        container.style.color = "#000000"
+        container.style["text-shadow"] = "-2px 5px 7px #c3c3c3"
     }
 }
