@@ -1,0 +1,10 @@
+{
+    "name": "Temperatura actual",
+    "short_name": "Temperatura actual",
+    "start_url": "index.html",
+    "scope": "./",
+    "icons": [],
+    "theme_color": "#161616",
+    "background_color": "#161616",
+    "display": "standalone"
+  }
