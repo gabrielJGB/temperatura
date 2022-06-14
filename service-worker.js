@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["README.md","a19d3a8075eabbd58c3b292292787ed7"],["index.html","d7fa1b25082b3fcf724a79c1de82361d"],["manifest.json","6d393235f27f1f1d5134603ba36c2a3a"],["script.js","eedc3e142fbadebd7849f67b1eba6ce0"]];
+var precacheConfig = [["README.md","a19d3a8075eabbd58c3b292292787ed7"],["index.html","21fd544fedc7d8b1deb169cdf36a74d2"],["manifest.json","6d393235f27f1f1d5134603ba36c2a3a"],["script.js","40c58a43f121f82e06ad8f829e7db57e"]];
 var cacheName = 'sw-precache-v3-sw-precache-' + (self.registration ? self.registration.scope : '');
 
 

@@ -1,9 +1,9 @@
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
+    navigator.serviceWorker.register("./service-worker.js");
 }
 
 
-let box = document.querySelector('.box')
+let box = document.querySelector('.temp')
 let title = document.querySelector('title')
 fetch('https://ws.smn.gob.ar/map_items/weather')
     .then((data) => {
