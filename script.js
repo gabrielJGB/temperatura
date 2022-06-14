@@ -14,9 +14,9 @@ let colorPicker = document.querySelector('.color-picker')
 
 fetchWeatherApi()
 
-// setInterval(() => {
-//     fetchWeatherApi()
-// }, 60000)
+setInterval(() => {
+    fetchWeatherApi()
+}, 60000)
 
 function fetchWeatherApi() {
 
