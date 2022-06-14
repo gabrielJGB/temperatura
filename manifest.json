@@ -3,7 +3,18 @@
     "short_name": "Temperatura actual",
     "start_url": "index.html",
     "scope": "./",
-    "icons": [],
+    "icons": [
+      {
+        "src": "img/png-icon.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "img/png-icon.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
     "theme_color": "#161616",
     "background_color": "#161616",
     "display": "standalone"
