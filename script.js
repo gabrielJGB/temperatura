@@ -16,7 +16,7 @@ fetchWeatherApi()
 
 setInterval(() => {
     fetchWeatherApi()
-}, 60000)
+}, 120000)
 
 function fetchWeatherApi() {
 
@@ -40,7 +40,6 @@ function fetchWeatherApi() {
         }).catch((error) => {
             console.log(error)
         })
-
 }
  
 
