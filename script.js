@@ -81,3 +81,9 @@ function changeColor(selectedColor) {
         updated.style.color = "#4c4c4c"
     }
 }
+
+
+
+box.addEventListener('click',()=>{
+        window.open("https://www.google.com.ar/search?q=clima", "_blank");
+})
