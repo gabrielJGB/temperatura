@@ -32,7 +32,7 @@ function fetchWeatherApi() {
                         wind.textContent = city.weather.wind_speed
                         windDeg.textContent = city.weather.wing_deg
                         humidity.textContent = city.weather.humidity
-                        updated.textContent = "Actualizado a las " + formatTime(city.updated) +
+                        updated.textContent = "Actualizado a las " + formatTime(city.updated)
                     }
 
                 })
