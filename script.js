@@ -10,13 +10,13 @@ let windDeg = document.querySelector('.wind-deg')
 let humidity = document.querySelector('.humidity')
 let title = document.querySelector('title')
 let colorPicker = document.querySelector('.color-picker')
-
+let updated = document.querySelector('.updated')
 
 fetchWeatherApi()
 
 setInterval(() => {
-    fetchWeatherApi()
-}, 120000)
+        fetchWeatherApi()
+    }, 300000) //15 min
 
 function fetchWeatherApi() {
 
@@ -32,6 +32,7 @@ function fetchWeatherApi() {
                         wind.textContent = city.weather.wind_speed
                         windDeg.textContent = city.weather.wing_deg
                         humidity.textContent = city.weather.humidity
+                        updated.textContent = "Actualizado a las " + formatTime(city.updated) +
                     }
 
                 })
@@ -41,7 +42,12 @@ function fetchWeatherApi() {
             console.log(error)
         })
 }
- 
+
+function formatTime(timestamp) {
+    var date = new Date(timestamp * 1000);
+    return (('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2));
+
+}
 
 colorPicker.addEventListener('input', getSelectedColor)
 
@@ -57,8 +63,8 @@ function getSelectedColor(e) {
     let selectedColor = e.currentTarget.value
     localStorage.setItem("backgroundColor", selectedColor);
     changeColor(selectedColor)
-
 }
+
 
 
 function changeColor(selectedColor) {
@@ -67,8 +73,10 @@ function changeColor(selectedColor) {
     if (tinycolor(selectedColor).isDark()) {
         container.style.color = "#ffffff"
         container.style["text-shadow"] = "-2px 5px 7px black"
+        updated.style.color = "#b9b9b9"
     } else {
         container.style.color = "#000000"
         container.style["text-shadow"] = "-2px 5px 7px #c3c3c3"
+        updated.style.color = "#4c4c4c"
     }
 }
