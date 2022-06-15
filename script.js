@@ -12,51 +12,37 @@ let title = document.querySelector('title')
 let colorPicker = document.querySelector('.color-picker')
 let updated = document.querySelector('.updated')
 
-const options = {
-    body:'contenido',
-    icon:'img/png-icon.png',
-    vibrate: [100,50,100],
-    data:{primaryKey:1}
+
+fetchWeatherApi()
+
+setInterval(() => {
+        fetchWeatherApi()
+    }, 300000) //15 min
+
+function fetchWeatherApi() {
+
+    fetch('https://ws.smn.gob.ar/map_items/weather')
+        .then((data) => {
+            data.json().then((cities_array) => {
+                cities_array.forEach(city => {
+
+                    if (city.name === "Bahía Blanca") {
+                        title.textContent = city.weather.tempDesc
+                        box.textContent = city.weather.tempDesc
+                        description.textContent = city.weather.description
+                        wind.textContent = city.weather.wind_speed
+                        windDeg.textContent = city.weather.wing_deg
+                        humidity.textContent = city.weather.humidity
+                        updated.textContent = "Actualizado a las " + formatTime(city.updated)
+                    }
+
+                })
+            })
+
+        }).catch((error) => {
+            console.log(error)
+        })
 }
-
-
-Notification.requestPermission(status=>{
-    console.log(status)
-})
-navigator.serviceWorker.getRegistration().then(reg=>{
-    reg.showNotification('Titulo',options)
-})
-
-// fetchWeatherApi()
-
-// setInterval(() => {
-//         fetchWeatherApi()
-//     }, 300000) //15 min
-
-// function fetchWeatherApi() {
-
-//     fetch('https://ws.smn.gob.ar/map_items/weather')
-//         .then((data) => {
-//             data.json().then((cities_array) => {
-//                 cities_array.forEach(city => {
-
-//                     if (city.name === "Bahía Blanca") {
-//                         title.textContent = city.weather.tempDesc
-//                         box.textContent = city.weather.tempDesc
-//                         description.textContent = city.weather.description
-//                         wind.textContent = city.weather.wind_speed
-//                         windDeg.textContent = city.weather.wing_deg
-//                         humidity.textContent = city.weather.humidity
-//                         updated.textContent = "Actualizado a las " + formatTime(city.updated)
-//                     }
-
-//                 })
-//             })
-
-//         }).catch((error) => {
-//             console.log(error)
-//         })
-// }
 
 function formatTime(timestamp) {
     var date = new Date(timestamp * 1000);
