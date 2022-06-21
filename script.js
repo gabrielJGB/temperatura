@@ -15,7 +15,7 @@ let cityList = document.querySelector('#city-list')
 let response
 
 fetchWeatherApi()
-getLocation()
+// getLocation()
 
 setInterval(() => {
     let min = new Date().getMinutes()
@@ -25,29 +25,29 @@ setInterval(() => {
 }, 60000)
 
 
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-            let lat = position.coords.latitude
-            let lon = position.coords.longitude
-            let ak = '87eac2828250da32166d49f93bcbf215'
+// function getLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition((position) => {
+//             let lat = position.coords.latitude
+//             let lon = position.coords.longitude
+//             let ak = '87eac2828250da32166d49f93bcbf215'
 
-            fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=10&appid=${ak}`)
-                .then((data) => {
-                    data.json().then((result) => {
-                        let city = result[0].name
-                        selectCity(city)
-                    })
-                })
-                .catch((err) => {
-                    console.error(err)
-                })
-        },(error)=>{
-            selectCity("Bahía Blanca")
-        })
+//             fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=10&appid=${ak}`)
+//                 .then((data) => {
+//                     data.json().then((result) => {
+//                         let city = result[0].name
+//                         selectCity(city)
+//                     })
+//                 })
+//                 .catch((err) => {
+//                     console.error(err)
+//                 })
+//         },(error)=>{
+            
+//         })
 
-    } 
-}
+//     } 
+// }
 
 function fetchWeatherApi() {
 
@@ -56,7 +56,7 @@ function fetchWeatherApi() {
             data.json().then((cities_array) => {
                 response = cities_array
                 getCityList(cities_array)
-                
+                selectCity('Bahía Blanca')
             })
 
         }).catch((err) => {
