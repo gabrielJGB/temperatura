@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["README.md","a19d3a8075eabbd58c3b292292787ed7"],["img/icon.ico","332182a05019b600b296c6fde5472ecf"],["img/png-icon.png","2367049970dd61e5aee799f75e3d6159"],["index.html","1e4f46a0beaf1356cb3b370f8ff6f943"],["manifest.json","775de899090565930bbffe2ed3ba22bb"],["script.js","8da2e971469fd0b4b622ad1a93a265c2"],["tinycolor.js","a6827364d9cad81f1be0d8231591dc61"]];
+var precacheConfig = [["README.md","a19d3a8075eabbd58c3b292292787ed7"],["img/icon.ico","332182a05019b600b296c6fde5472ecf"],["img/png-icon.png","2367049970dd61e5aee799f75e3d6159"],["index.html","14b221163977b17da1717b6ea50b7929"],["manifest.json","775de899090565930bbffe2ed3ba22bb"],["script.js","98091eb8085f65e66a74619e7f0d4651"],["tinycolor.js","a6827364d9cad81f1be0d8231591dc61"]];
 var cacheName = 'sw-precache-v3-sw-precache-' + (self.registration ? self.registration.scope : '');
 
 

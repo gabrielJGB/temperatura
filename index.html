@@ -4,8 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="manifest" href="./manifest.json">
+        
         <link rel="shortcut icon" href="./img/icon.ico" type="image/x-icon">
-        <title>Temp:</title>
+        <title>---</title>
         <style>
         *{
         margin: 0;
@@ -35,10 +36,16 @@
         .info{
         font-size: 17px;
         }
-        .color-picker{
+        .footer{
+        
+        width: -webkit-fill-available;
         position: fixed;
-        right: 10px;
-        bottom: 10px;
+        right: 0;
+        display: flex;
+        bottom: 0;
+        justify-content: space-between;
+        align-items: center;
+        padding: 11px;
         }
         .updated{
         font-size: 13px;
@@ -47,7 +54,20 @@
         text-shadow: 0 0 black;
         }
         .temp:hover{
-            cursor: pointer;
+        cursor: pointer;
+        }
+        #city-list{
+        padding: 5px 0;
+        font-size: 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #141414;
+        color: #efefef;
+        border: solid 1px #4c4c4c;
+        box-shadow: 0 0 7px black;
+        }
+        option{
+            padding: 5px 0;
         }
         </style>
     </head>
@@ -60,15 +80,20 @@
                     ---
                 </div>
                 <div class="info">
-                    <div class="description">Nublado</div>
+                    <div class="description"></div>
                     <div>Viento <span class="wind">--</span> km/h <span class="wind-deg">--</span></div>
                     <div>Humedad <span class="humidity">--</span>%</div>
                     <div class="updated"></div>
                 </div>
             </div>
+            <div class="footer">
+                
+            <select id="city-list"></select>
             <input class="color-picker" type="color">
         </div>
-        <script type='text/javascript' src='./tinycolor.js'></script>
-        <script type='text/javascript' src="./script.js"></script>
-    </body>
+    </div>
+    
+    <script type='text/javascript' src='./tinycolor.js'></script>
+    <script type='text/javascript' src="./script.js"></script>
+</body>
 </html>
